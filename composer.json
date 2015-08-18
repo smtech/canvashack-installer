@@ -1,0 +1,24 @@
+{
+    "name": "smtech/canvashack-installer",
+    "description": "Custom Composer installer for CanvasHack plugins",
+    "type": "composer-plugin",
+    "require": {
+        "composer-plugin-api": "~1.0"
+    },
+    "license": "LGPL-3.0",
+    "authors": [
+        {
+            "name": "Seth Battis",
+            "email": "sethbattis@stmarksschool.org"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload" : {
+        "psr-4": {
+            "smtech\\Composer": ""
+        }
+    },
+    "extra": {
+        "class": "smtech\\Composer\\CanvasHackInstallerPlugin"
+    }
+}
