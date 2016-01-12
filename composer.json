@@ -2,9 +2,6 @@
     "name": "smtech/canvashack-installer",
     "description": "Custom Composer installer for CanvasHack plugins",
     "type": "composer-plugin",
-    "require": {
-        "composer-plugin-api": "1.0.0"
-    },
     "license": "LGPL-3.0",
     "authors": [
         {
@@ -15,10 +12,13 @@
     "minimum-stability": "dev",
     "autoload" : {
         "psr-4": {
-            "smtech\\Composer\\": ""
+            "smtech\\Composer\\": "src/"
         }
     },
     "extra": {
         "class": "smtech\\Composer\\CanvasHackInstallerPlugin"
+    },
+    "require": {
+        "composer-plugin-api": "~1.0"
     }
 }

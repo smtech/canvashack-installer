@@ -13,10 +13,11 @@ use Composer\Installer\LibraryInstaller;
  * @author Seth Battis <SethBattis@stmarksschool.org>
  **/
 class CanvasHackInstaller extends LibraryInstaller {
+	
 	/**
 	 * {@inheritDoc}
 	 **/
-	public function getPackageBasePath(PackageInterface $package) {
+	public function getInstallPath(PackageInterface $package) {
 		$prefix = substr($package->getPrettyName(), 0, 18);
 		if ('canvashack/plugin-' !== $prefix) {
 			throw new \InvalidArgumentException(
