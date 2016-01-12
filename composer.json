@@ -3,7 +3,7 @@
     "description": "Custom Composer installer for CanvasHack plugins",
     "type": "composer-plugin",
     "require": {
-        "composer-plugin-api": "~1.0"
+        "composer-plugin-api": "1.0.0"
     },
     "license": "LGPL-3.0",
     "authors": [
