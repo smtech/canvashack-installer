@@ -13,19 +13,19 @@ use Composer\Installer\LibraryInstaller;
  * @author Seth Battis <SethBattis@stmarksschool.org>
  **/
 class CanvasHackInstaller extends LibraryInstaller {
-	
+
 	/**
 	 * {@inheritDoc}
 	 **/
 	public function getInstallPath(PackageInterface $package) {
-		$prefix = substr($package->getPrettyName(), 0, 18);
-		if ('canvashack/plugin-' !== $prefix) {
-			throw new \InvalidArgumentException(
-				'Unable to install plugin, CanvasHack plugins should always start their package name with "canvashack/plugin-"'
-			);
-		}
+		$name = $package->getPrettyName();
+		if ('canvashack/plugin-' == substr($package->getPrettyName(), 0, 18)) {
+            $name = substr($name, 18);
+		} else {
+            $name = str_replace('/', '_', $name);
+        }
 
-		return 'hacks/' . substr($package->getPrettyName(), 18);
+		return "hacks/$name";
 	}
 
 	/**
